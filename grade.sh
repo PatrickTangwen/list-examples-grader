@@ -4,6 +4,14 @@ rm -rf student-submission
 git clone $1 student-submission
 echo 'Finished cloning'
 
+if [[-f ListExamples.java ]]
+then 
+    echo "ListExamples Found"
+else
+    echo "need file ListExamples.java"
+    exit1
+f;
+
 cp student-submission/ListExamples.java ./
 javac -cp $CPATH *.java
 java -cp $CPATH org.junit.runner.JUnitCore TestListExamples
